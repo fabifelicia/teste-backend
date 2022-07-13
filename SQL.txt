@@ -1,0 +1,6 @@
+SELECT Fornecedor.nome_fornecedor as FORNECEDOR, Peca.preco_peca as PREÇO 
+FROM Fornecedor, Peca, Carro, Fornecimento
+WHERE Fornecedor.cidade_fornecedor = 'vitoria'
+AND Fornecedor.cod_fornecedor = Fornecimento.cod_fornecedor
+AND Peca.cod_peca = 'MOTOR'
+AND Carro.cod_carro = 'KOMBI'
