@@ -6,10 +6,10 @@ let phoneList = [
   { telefone: 589354, nome: 'Luiz' }
 ]
 
-function getPhoneNumber(name) {
+function getPhoneNumber(phoneList, name) {
   return Object.values(phoneList).find(value => value.nome === name)
 }
 
 
-console.log(getPhoneNumber('Luiz'))
+console.log(getPhoneNumber(phoneList,'Bial'))
 
