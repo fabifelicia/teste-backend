@@ -8,13 +8,16 @@ let caracterMatrix = [
 function printMatrix(pixel, color) {
 
   let coloredMatrix = caracterMatrix
-  let oldPixel = coloredMatrix[pixel[0]][pixel[1]]  
-  coloredMatrix[pixel[0]][pixel[1]] = color
+  let oldPixel = coloredMatrix[pixel[0]][pixel[1]] 
+  const flag = '??' 
+  coloredMatrix[pixel[0]][pixel[1]] = flag
 
-  coloredMatrix = paintCenter(coloredMatrix, oldPixel, color)
-  coloredMatrix = paintBorders(coloredMatrix, oldPixel, color)
-  coloredMatrix = paintFirstAndLastLine(coloredMatrix, oldPixel, color)
-  coloredMatrix = paintFirstAndLastColumn(coloredMatrix, oldPixel, color)
+  coloredMatrix = paintCenter(coloredMatrix, oldPixel, flag)
+  coloredMatrix = paintBorders(coloredMatrix, oldPixel, flag)
+  coloredMatrix = paintFirstAndLastLine(coloredMatrix, oldPixel, flag)
+  coloredMatrix = paintFirstAndLastColumn(coloredMatrix, oldPixel, flag)
+
+  coloredMatrix = coloredMatrix.map(line => line.map(pixel => pixel === flag ? color : pixel))
   
   return coloredMatrix
 }
